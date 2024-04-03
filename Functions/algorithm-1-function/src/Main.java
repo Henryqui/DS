@@ -25,18 +25,17 @@ public class Main {
     }
 
     public static int acharMaior(int z, int y, int x){
-        int aux = 0;
+                 int aux;
 
-        if( z < x && y < x){
-            aux = x;
-        }
+            if( z < x && y < x){
+                aux = x;
+             } else if (y < z && x < z){
+                aux = z;
+             } else {
+                aux = y;
+            }
 
-        if (y < z && x < z){
-            aux = z;
-        }
-
-        if (x < y && z < y ){
-            aux = y;
+            return aux;
         }
 
         return aux;
