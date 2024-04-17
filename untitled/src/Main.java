@@ -8,7 +8,7 @@ public class Main {
         DecimalFormat df = new DecimalFormat("###,##0.00");
 
         int a, b, c ;
-        double x1, x2, delta;
+        double delta;
 
         System.out.print("Insira a quantidade de x^2: ");
         a = sc.nextInt();
@@ -18,17 +18,8 @@ public class Main {
         c = sc.nextInt();
 
         delta = deltaDaEquacao(a, b, c);
-        if (delta<0){
-            System.out.println("Não existem raizes reais!");
-        } else {
-            x1 = xValue1(delta, b, a);
-            x2 = xValue2(delta, a, b);
 
-            System.out.println(" Esse é o valor do x1: " + df.format(x1));
-            System.out.println(" Esse é o valor do x2: " + df.format(x2));
-
-        }
-
+        checarDelta(delta, a, b);
 
     }
 
@@ -41,10 +32,28 @@ public class Main {
 
     }
 
+    public static void checarDelta(double deltinha, int a, int b){
+       double x1, x2;
+
+        if (deltinha<0){
+
+            System.out.println("Não existem raizes reais!");
+
+        }
+        else {
+
+            x1 = xValue1(deltinha, b, a);
+            x2 = xValue2(deltinha, a, b);
+
+            mostrarX(x1, x2);
+
+        }
+    }
+
     public static double xValue1(double delta, int b, int a ) {
         double aux ;
 
-        aux = (-b + Math.sqrt(delta))/2 * a;
+        aux = (-b + Math.sqrt(delta))/(2 * a);
 
         return aux;
     }
@@ -52,9 +61,17 @@ public class Main {
     public static double xValue2(double delta, int a, int b ) {
         double aux ;
 
-        aux = (-b - Math.sqrt(delta))/2 * a;
+        aux = (-b - Math.sqrt(delta))/(2 * a);
 
         return aux;
+    }
+
+    public static void mostrarX(double a, double b){
+
+        DecimalFormat df = new DecimalFormat("###,##0.00");
+        System.out.println(" Esse é o valor do x1: " + df.format(a));
+        System.out.println(" Esse é o valor do x2: " + df.format(b));
+
     }
 
 }
