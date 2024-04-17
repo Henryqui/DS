@@ -34,10 +34,11 @@ public class Main {
 
     public static void checarDelta(double deltinha, int a, int b){
        double x1, x2;
+        DecimalFormat df = new DecimalFormat("###,##0.00");
 
         if (deltinha<0){
 
-            System.out.println("Não existem raizes reais!");
+            imprimir("Não existem raizes reais!");
 
         }
         else {
@@ -45,8 +46,8 @@ public class Main {
             x1 = xValue1(deltinha, b, a);
             x2 = xValue2(deltinha, a, b);
 
-            mostrarX(x1, x2);
-
+            imprimir(" Esse é o valor do x1: " + df.format(a));
+            imprimir (" Esse é o valor do x2: " + df.format(b));
         }
     }
 
@@ -69,9 +70,11 @@ public class Main {
     public static void mostrarX(double a, double b){
 
         DecimalFormat df = new DecimalFormat("###,##0.00");
-        System.out.println(" Esse é o valor do x1: " + df.format(a));
-        System.out.println(" Esse é o valor do x2: " + df.format(b));
-
+       
     }
 
+    
+    public static void imprimir (String msg){
+        System.out.println(msg);
+    }
 }
