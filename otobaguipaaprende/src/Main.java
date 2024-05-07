@@ -5,6 +5,7 @@ public class Main {
 
         Scanner sc = new Scanner(System.in);
         ConversaoDolarReal cdr = new ConversaoDolarReal();
+        DecimalFormat df = new DecimalFormat("##,##0.00")
 
         System.out.println("Qual o valor em dolar que deseja converter? ");
         cdr.valor = sc.nextInt();
@@ -12,7 +13,7 @@ public class Main {
         System.out.println("Qual a cotação do dolar? ");
         cdr.cotad = sc.nextInt();
 
-        int vdc = cdr.ConverterValor();
+        double vdc = cdr.ConverterValor();
 
         System.out.println("O valor dos dolares convertidos para real é de: " + vdc);
 
