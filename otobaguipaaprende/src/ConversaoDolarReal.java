@@ -3,7 +3,7 @@ public class ConversaoDolarReal {
     public double cotad;
     public double valor;
 
-    public double ConverterValor(){
+    public double converterValor(){
         return cotad * valor;
 
     }
