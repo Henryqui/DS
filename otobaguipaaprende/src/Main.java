@@ -13,7 +13,7 @@ public class Main {
         System.out.println("Qual a cotação do dolar? ");
         cdr.cotad = sc.nextInt();
 
-        double vdc = cdr.ConverterValor();
+        double vdc = cdr.converterValor();
 
         System.out.println("O valor dos dolares convertidos para real é de: " + vdc);
 
