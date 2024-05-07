@@ -1,9 +1,9 @@
 public class ConversaoDolarReal {
 
-    public int cotad;
-    public int valor;
+    public double cotad;
+    public double valor;
 
-    public int ConverterValor(){
+    public double ConverterValor(){
         return cotad * valor;
 
     }
